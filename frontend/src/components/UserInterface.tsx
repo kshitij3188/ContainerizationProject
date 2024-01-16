@@ -6,7 +6,7 @@ import axios from 'axios';
 interface User {
   id: number;
   name: string;
-  email: string;
+email: string;
   review: string
 }
 
@@ -89,8 +89,8 @@ const UserInterface: React.FC<UserInterfaceProps> = ({ backendName }) => {
 
   return (
     <div className={`user-interface ${bgColor} ${backendName} w-full max-w-md p-4 my-4 rounded shadow`}>
-
-      <h2 className="text-xl font-bold text-center text-blue mb-6">{`User Manager Dashboard`}</h2>
+      <img src={`/${backendName}logo.svg`} alt={`${backendName} Logo`} className="w-20 h-20 mb-6 mx-auto" />
+      <h2 className="text-xl font-bold text-center text-blue mb-6">{`nNea Restaurant Review`}</h2>
 
       {/* Form to add new user */}
       <form onSubmit={createUser} className="mb-6 p-4 bg-blue-50 rounded shadow">
@@ -101,7 +101,7 @@ const UserInterface: React.FC<UserInterfaceProps> = ({ backendName }) => {
           className="mb-2 w-full p-2 border border-gray-300 rounded"
         />
         <input
-          placeholder="Email"
+          placeholder="Review"
           value={newUser.email}
           onChange={(e) => setNewUser({ ...newUser, email: e.target.value })}
           className="mb-2 w-full p-2 border border-gray-300 rounded"
@@ -126,13 +126,13 @@ const UserInterface: React.FC<UserInterfaceProps> = ({ backendName }) => {
           className="mb-2 w-full p-2 border border-gray-300 rounded"
         />
         <input
-          placeholder="New Email"
+          placeholder="New Review"
           value={updateUser.email}
           onChange={(e) => setUpdateUser({ ...updateUser, email: e.target.value })}
           className="mb-2 w-full p-2 border border-gray-300 rounded"
         />
         <button type="submit" className="w-full p-2 text-white bg-blue-400 rounded hover:bg-blue-300">
-          Update User
+          Update Review
         </button>
       </form>
 
