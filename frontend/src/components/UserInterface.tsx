@@ -6,8 +6,7 @@ import axios from 'axios';
 interface User {
   id: number;
   name: string;
-email: string;
-  review: string
+  email: string;
 }
 
 interface UserInterfaceProps {
