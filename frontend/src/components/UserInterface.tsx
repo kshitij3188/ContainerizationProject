@@ -7,6 +7,7 @@ interface User {
   id: number;
   name: string;
   email: string;
+  review: string
 }
 
 interface UserInterfaceProps {
@@ -21,15 +22,15 @@ const UserInterface: React.FC<UserInterfaceProps> = ({ backendName }) => {
 
   // Define styles based on the backend name
   const backgroundColors: { [key: string]: string } = {
-    rust: 'bg-orange-500',
+    rust: 'bg-gray-50',
   };
 
   const buttonColors: { [key: string]: string } = {
-    rust: 'bg-orange-700 hover:bg-orange-600',
+    rust: 'bg-red-500 hover:bg-red-400',
   };
 
   const bgColor = backgroundColors[backendName as keyof typeof backgroundColors] || 'bg-gray-200';
-  const btnColor = buttonColors[backendName as keyof typeof buttonColors] || 'bg-gray-500 hover:bg-gray-600';
+  const btnColor = buttonColors[backendName as keyof typeof buttonColors] || 'bg-red-500 hover:bg-gray-600';
 
   // Fetch users
   useEffect(() => {
@@ -89,10 +90,10 @@ const UserInterface: React.FC<UserInterfaceProps> = ({ backendName }) => {
   return (
     <div className={`user-interface ${bgColor} ${backendName} w-full max-w-md p-4 my-4 rounded shadow`}>
 
-      <h2 className="text-xl font-bold text-center text-white mb-6">{`User Manager Dashboard`}</h2>
+      <h2 className="text-xl font-bold text-center text-blue mb-6">{`User Manager Dashboard`}</h2>
 
       {/* Form to add new user */}
-      <form onSubmit={createUser} className="mb-6 p-4 bg-blue-100 rounded shadow">
+      <form onSubmit={createUser} className="mb-6 p-4 bg-blue-50 rounded shadow">
         <input
           placeholder="Name"
           value={newUser.name}
@@ -105,13 +106,13 @@ const UserInterface: React.FC<UserInterfaceProps> = ({ backendName }) => {
           onChange={(e) => setNewUser({ ...newUser, email: e.target.value })}
           className="mb-2 w-full p-2 border border-gray-300 rounded"
         />
-        <button type="submit" className="w-full p-2 text-white bg-blue-500 rounded hover:bg-blue-600">
-          Add User
+        <button type="submit" className="w-full p-2 text-white bg-blue-400 rounded hover:bg-blue-300">
+          Add Review
         </button>
       </form>
 
       {/* Form to update user */}
-      <form onSubmit={handleUpdateUser} className="mb-6 p-4 bg-blue-100 rounded shadow">
+      <form onSubmit={handleUpdateUser} className="mb-6 p-4 bg-blue-50 rounded shadow">
         <input
           placeholder="User ID"
           value={updateUser.id}
@@ -130,7 +131,7 @@ const UserInterface: React.FC<UserInterfaceProps> = ({ backendName }) => {
           onChange={(e) => setUpdateUser({ ...updateUser, email: e.target.value })}
           className="mb-2 w-full p-2 border border-gray-300 rounded"
         />
-        <button type="submit" className="w-full p-2 text-white bg-green-500 rounded hover:bg-green-600">
+        <button type="submit" className="w-full p-2 text-white bg-blue-400 rounded hover:bg-blue-300">
           Update User
         </button>
       </form>
@@ -138,7 +139,7 @@ const UserInterface: React.FC<UserInterfaceProps> = ({ backendName }) => {
       {/* Display users */}
       <div className="space-y-4">
         {users.map((user) => (
-          <div key={user.id} className="flex items-center justify-between bg-white p-4 rounded-lg shadow">
+          <div key={user.id} className="flex items-center justify-between bg-blue-50 p-4 rounded-lg shadow">
             <CardComponent card={user} />
             <button onClick={() => deleteUser(user.id)} className={`${btnColor} text-white py-2 px-4 rounded`}>
               Delete User

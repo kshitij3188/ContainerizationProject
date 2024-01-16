@@ -1,7 +1,7 @@
 services:
   nextapp:
     container_name: nextapp
-    image: francescoxx/nextapp:latest
+    image: nextapp:latest
     build:
       context: ./frontend
       dockerfile: next.dockerfile
@@ -13,7 +13,7 @@ services:
       - rustapp
   rustapp:
     container_name: rustapp
-    image: francescoxx/rustapp:latest
+    image: rustapp:latest
     build:
       context: ./backend
       dockerfile: rust.dockerfile
