@@ -1,4 +1,5 @@
 # Kube commands
+
 ## Deploy
 
 ### Frontend
@@ -9,7 +10,7 @@ cd frontend/k8s
 
 docker pull caxolahop3/sc-frontend
 
-microk8s kubectl create deployment --image docker.io/caxolahop3/sc-frontend:latest
+microk8s kubectl create deployment --image docker.io/caxolahop3/sc-frontend:latest frontend-deployment
 
 microk8s kubectl apply -f service.yaml
 ```
@@ -23,6 +24,7 @@ setup, you need to add the following to /etc/hosts:
 ```
 
 (Documented on slide 53 of Lesson 3)
+
 ### DB
 
 ```bash
