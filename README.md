@@ -13,3 +13,20 @@
 - [ ] Done with middleware
 - [ ] Done with frontend
 - [ ] Google Cloud Platform
+
+## Application
+
+### Class Diagram
+
+![UML-cd]()
+
+### Sequence Diagram
+
+![UML-sd]()
+
+---
+
+## Prerequisites
+
+1. `Docker`  installed
+2. `microk8s` installed
