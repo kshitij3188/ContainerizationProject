@@ -18,11 +18,11 @@
 
 ### Class Diagram
 
-![UML-cd]()
+![UML-cd](https://github.com/kshitij3188/ContainerizationProject/blob/main/demo/Class_Diagram.png)
 
 ### Sequence Diagram
 
-![UML-sd]()
+![UML-sd](https://github.com/kshitij3188/ContainerizationProject/blob/main/demo/Sequence_Diagram.png)
 
 ---
 
