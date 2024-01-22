@@ -57,3 +57,19 @@ microk8s kubectl create deployment --image docker.io/caxolahop3/sc-backend:lates
 
 microk8s kubectl apply -f service.yaml
 ```
+
+### Database
+
+```bash
+
+cd backend/k8s
+
+microk8s kubectl apply -f postgres-config.yaml
+
+microk8s kubectl apply -f postgres-secret.yaml
+
+microk8s kubectl apply -f postgres-storage.yaml
+
+microk8s kubectl apply -f postgres-deployment.yaml
+
+microk8s kubectl apply -f postgres-service.yaml
