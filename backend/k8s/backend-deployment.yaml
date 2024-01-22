@@ -4,7 +4,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-deployment-v2
+  name: backend-deployment
 spec:
   replicas: 1
   selector:
@@ -20,8 +20,7 @@ spec:
           image: docker.io/caxolahop3/sc-backend:latest
           env:
             - name: DATABASE_URL
-              # value: "postgres://postgresadmin:sc3188@postgres-service:5432/postgresdb"
-              value: https://192.168.64.2/5432
+              value: postgresql://postgresadmin:sc3188@192.168.64.2:5432/postgresdb
           ports:
             - containerPort: 8080
 # Replace <your-backend-image-name>, <username>, <password>, and <database_name> with the actual values for your environment. The postgres-service:5432 refers to your PostgreSQL service within the Kubernetes cluster and the port it's exposed on.

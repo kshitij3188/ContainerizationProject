@@ -17,6 +17,8 @@ struct User {
 
 //DATABASE URL
 const DB_URL: &str = env!("DATABASE_URL");
+// println!("DB URL {}", DB_URL);
+
 
 //constants
 const OK_RESPONSE: &str =
@@ -27,6 +29,17 @@ const INTERNAL_ERROR: &str = "HTTP/1.1 500 INTERNAL ERROR\r\n\r\n";
 //main function
 fn main() {
     //Set Database
+    let db_url = match std::env::var("DATABASE_URL") {
+        Ok(val) => val,
+        Err(e) => {
+            println!("Couldn't read DATABASE_URL ({})", e);
+            return;
+        }
+    };
+
+    println!("DB URL {}", db_url);
+    println!("DB URL {}", DB_URL);
+
     if let Err(_) = set_database() {
         println!("Error setting database");
         return;
