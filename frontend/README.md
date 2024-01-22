@@ -1,5 +1,7 @@
 # Kube commands
 
+microk8s enable metallb:10.50.100.5-10.50.100.25
+
 ## Deploy
 
 ### Frontend
@@ -10,10 +12,15 @@ cd frontend/k8s
 
 docker pull caxolahop3/sc-frontend
 
-microk8s kubectl create deployment --image docker.io/caxolahop3/sc-frontend:latest frontend-deployment
+microk8s kubectl apply -f deployment.yaml
 
 microk8s kubectl apply -f service.yaml
+
+microk8s kubectl apply -f nodeport.yaml
 ```
+
+Access it at: http://192.168.64.2:32404/
+
 
 For the ingress (service.yaml) to work locally without a proper DNS server
 setup, you need to add the following to /etc/hosts:
