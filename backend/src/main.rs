@@ -17,8 +17,6 @@ struct User {
 
 //DATABASE URL
 const DB_URL: &str = env!("DATABASE_URL");
-// println!("DB URL {}", DB_URL);
-
 
 //constants
 const OK_RESPONSE: &str =
@@ -29,22 +27,8 @@ const INTERNAL_ERROR: &str = "HTTP/1.1 500 INTERNAL ERROR\r\n\r\n";
 //main function
 fn main() {
     //Set Database
-    println!("Setting database");
-
-    let db_url = match std::env::var("DATABASE_URL") {
-        Ok(val) => val,
-        Err(e) => {
-            println!("Couldn't read DATABASE_URL ({})", e);
-            return;
-        }
-    };
-
-    println!("DB URL {}", db_url);
-    println!("DB URL {}", DB_URL);
-
-    if let Err(err) = set_database() {
+    if let Err(_) = set_database() {
         println!("Error setting database");
-        println!("Err message {}", err);
         return;
     }
 
@@ -66,9 +50,7 @@ fn main() {
 
 //db setup
 fn set_database() -> Result<(), PostgresError> {
-    println!("Running connect");
     let mut client = Client::connect(DB_URL, NoTls)?;
-    println!("Creating table");
     client.batch_execute(
         "
         CREATE TABLE IF NOT EXISTS users (
@@ -78,7 +60,6 @@ fn set_database() -> Result<(), PostgresError> {
         )
     "
     )?;
-    println!("Table created");
     Ok(())
 }
 

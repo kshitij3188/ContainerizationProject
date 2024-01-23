@@ -17,8 +17,8 @@ services:
     build:
       context: ./backend
       dockerfile: rust.dockerfile
-    environment:
-      DATABASE_URL: postgres://postgres:postgres@db:5432/postgres
+      args:
+        DATABASE_URL: postgres://postgres:postgres@db:5432/postgres
     ports:
       - 8080:8080
     depends_on:
