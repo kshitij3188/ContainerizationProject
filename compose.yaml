@@ -4,7 +4,6 @@ services:
     image: nextapp:latest
     build:
       context: ./frontend
-      
       dockerfile: next.dockerfile
     ports:
       - 3000:3000
@@ -28,9 +27,9 @@ services:
     container_name: db
     image: postgres:13
     environment:
-      POSTGRES_USER: postgresadmin
-      POSTGRES_PASSWORD: sc3188
-      POSTGRES_DB: postgresdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
     ports:
       - 5432:5432
     volumes:
