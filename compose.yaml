@@ -3,7 +3,7 @@ services:
     container_name: nextapp
     image: nextapp:latest
     build:
-      context: ./frontend/k8s
+      context: ./frontend
       
       dockerfile: next.dockerfile
     ports:
@@ -16,10 +16,10 @@ services:
     container_name: rustapp
     image: rustapp:latest
     build:
-      context: ./backend/k8s
+      context: ./backend
       dockerfile: rust.dockerfile
-      args:
-        DATABASE_URL: postgres://postgres:postgres@db:5432/postgres
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@db:5432/postgres
     ports:
       - 8080:8080
     depends_on:

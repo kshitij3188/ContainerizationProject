@@ -29,6 +29,8 @@ const INTERNAL_ERROR: &str = "HTTP/1.1 500 INTERNAL ERROR\r\n\r\n";
 //main function
 fn main() {
     //Set Database
+    println!("Setting database");
+
     let db_url = match std::env::var("DATABASE_URL") {
         Ok(val) => val,
         Err(e) => {
