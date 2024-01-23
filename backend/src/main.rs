@@ -40,8 +40,9 @@ fn main() {
     println!("DB URL {}", db_url);
     println!("DB URL {}", DB_URL);
 
-    if let Err(_) = set_database() {
+    if let Err(err) = set_database() {
         println!("Error setting database");
+        println!("Err message {}", err);
         return;
     }
 
@@ -63,7 +64,9 @@ fn main() {
 
 //db setup
 fn set_database() -> Result<(), PostgresError> {
+    println!("Running connect");
     let mut client = Client::connect(DB_URL, NoTls)?;
+    println!("Creating table");
     client.batch_execute(
         "
         CREATE TABLE IF NOT EXISTS users (
@@ -73,6 +76,7 @@ fn set_database() -> Result<(), PostgresError> {
         )
     "
     )?;
+    println!("Table created");
     Ok(())
 }
 
