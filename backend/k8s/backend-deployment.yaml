@@ -1,0 +1,25 @@
+# You will need to create a deployment YAML file for your backend if you don't have one already. In this deployment file, you will set the DATABASE_URL environment variable using the name of the PostgreSQL service you have set up (postgres-service).
+
+# Here's an example snippet that you would add to your backend's deployment configuration:
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend-container
+          image: docker.io/caxolahop3/sc-backend:latest
+          env:
+            - name: DATABASE_URL
+              value: postgresql://postgresadmin:sc3188@postgres-service:5432/postgresdb
+          ports:
+            - containerPort: 8080
