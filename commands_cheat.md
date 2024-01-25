@@ -1,6 +1,6 @@
 ```
-helm install k8s-app k8s-gcp-chart
-helm upgrade k8s-app k8s-gcp-chart
+helm install k8s-app
+helm upgrade k8s-app
 helm uninstall k8s-app
 ```
 

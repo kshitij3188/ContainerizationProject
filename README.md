@@ -3,23 +3,11 @@
 Simple containerized application with Kubernetes.
 This is a **TodoList application** which has **backend, frontend and database** deployed using Kubernetes.
 
-This example can be deployed in GCP (Google Cloud Platform) and microk8s.
+This example can be deployed in microk8s.
 
 ### Project structure
 1) MicroK8s version located in `k8s-microk8s` folder
-2) Google Cloud Platform (GCP) version located in `k8s-gcp` folder
-3) Helm charts are located in  `k8s-microk8s-chart` and `k8s-gcp-chart` folders correspondingly
-
-**You can find running example website in Google Cloud Platform using links below**:
-
-* Frontend: http://www.k8s.codes/
-* Backend: http://www.k8s.codes/api
-
-As we don't have wildcard SSL certificate, for GCP version we set an Ingress prefix for our Backend on `/api` path. For
-better Separation of Concerns, in our microk8s version Backend is located at `http://backend.k8app.com`.
-
-While following `HTTP` links mentioned above notice automatic redirects to `HTTPS`.
-
+3) Helm charts are located in  `k8s-microk8s-chart` and `k8s-chart` folders correspondingly
 ## Kubernetes
 
 ### Architecture
@@ -27,17 +15,6 @@ While following `HTTP` links mentioned above notice automatic redirects to `HTTP
 ![](docs/architecture.png)
 
 This section provides information on the location and purpose of Kubernetes-related files.
-
-### `k8s-gcp/` folder
-
-The `k8s-gcp/` folder contains artifacts for deployment using Google Cloud Platform. These artifacts will aid in the
-deployment process on GCP and ensure proper configuration of your Kubernetes objects. These are the files that were
-presented in the Team Presentation.
-
-### `k8s-gcp-chart/` folder
-
-The `k8app-charts/` folder contains artifacts to assist in the creation of Helm charts using the command helm install
-k8app ./k8app-chart. These artifacts will help to streamline the deployment process for your Kubernetes application.
 
 ### `k8-microk8s/` folder
 
@@ -113,33 +90,6 @@ In order to ensure that the application works on local version it is necessary t
 necessary to navigate to the backend first and trust the certificate there before going to the frontend. If this is not
 done the frontend will appear empty until you trust the certificate from the backend.
 
-## Setup using Google Cloud
-
-`k8s-gcp` contains YAML files that are GCP used for GCP deployment.
-`k8s-gcp-chart` contains Helm charts that can be used to deploy on GCP.
-
-To set up dependencies - consult
-this [guide](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl)
-
-Note: building frontend image for GCP can be tricky, as is case image is not build with amd64 architecture there may be
-problems with running it properly. For this reason `buildx` with `--platform=linux/amd64` flag can be used to be double
-sure it is properly build.
-
-1) You can build a docker image using `build_and_push_docker.sh` or by running `docker-compose build`.     
-   In case you want to build with `buildx`
-   use: `docker buildx build frontend -f frontend/frontend.dockerfile -t kotonium/k8app-frontend-image:1.2 --platform=linux/amd64`
-2) You have to be logged in with` gcloud auth login {username}`. Verify that log-in was successful with
-   running `gcloud auth list`.
-3) Connect to GCP cluster and configure local kubectl with command that is copied from GCP and looks
-   like: `gcloud container clusters get-credentials {cluster-name} --region {region_where_cluster_is_located}`
-
-4) Deploy kubernetes cluster to GCP using Helm with
-   ```bash
-   helm install k8s-app k8s-gcp-chart
-   ```
-5) As we have configured a real domain with SSL, after Ingress IP is issued, update the DNS routing to IP of Ingress.
-6) You are done. Follow the Frontend and Backend links and see them in action!
-
 ## Setup using Minikube
 
 1) Enable minikube to see local Docker images: ```eval $(minikube -p minikube docker-env)```
@@ -205,7 +155,7 @@ it can be run with either `yarm` or `npm run`.
 ### Database
 
 Postgres is used as primary data store. Credentials for Docker-compose version can be found in `.env` file. Credentials
-for `Microk8s` and `GCP` versions can be found in corresponding `ConfigMaps` and `Secrets`.
+for `Microk8s` version can be found in corresponding `ConfigMaps` and `Secrets`.
 
 
 
