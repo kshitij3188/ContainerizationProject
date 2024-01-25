@@ -1,5 +1,5 @@
 # => Build container
-FROM --platform=$BUILDPLATFORM amd64/node:alpine as builder
+FROM --platform=$BUILDPLATFORM node:alpine as builder
 WORKDIR /app
 COPY package.json .
 COPY package-lock.json .
@@ -9,7 +9,7 @@ COPY . .
 RUN yarn build
 
 # => Run container
-FROM amd64/nginx:1.15.2-alpine
+FROM --platform=$TARGETPLATFORM nginx:1.15.2-alpine
 
 # Nginx config
 RUN rm -rf /etc/nginx/conf.d
