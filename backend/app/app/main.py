@@ -26,7 +26,7 @@ def main_page_welcome():
     return """
     <html>
         <head>
-            <title>Title BE page</title>
+            <title>Backend Page</title>
         </head>
         <body>
             <h1>Hello. This is main page of back-end</h1>
