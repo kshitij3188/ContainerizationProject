@@ -1,12 +1,12 @@
+import ListItem from "./ListItem";
 import React from "react"
-import TodoItem from "./TodoItem";
 
-class TodosList extends React.Component {
+class BucketsList extends React.Component {
     render() {
         return (
             <ul>
                 {this.props.todos.map(todo => (
-                    <TodoItem
+                    <ListItem
                         key={todo.id}
                         todo={todo}
                         handleChangeProps={this.props.handleChangeProps}
@@ -18,4 +18,4 @@ class TodosList extends React.Component {
     }
 }
 
-export default TodosList
+export default BucketsList

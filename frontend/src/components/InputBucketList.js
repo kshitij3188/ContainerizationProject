@@ -1,6 +1,6 @@
 import React, {Component} from "react"
 
-class InputTodo extends Component {
+class InputBucketList extends Component {
     state = {
         title: "",
     };
@@ -26,12 +26,12 @@ class InputTodo extends Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <input type="text" placeholder="Add todo..." value={this.state.title} name="title"
+                <input type="text" placeholder="Add item to your Bucket List.." value={this.state.title} name="title"
                        onChange={this.onChange}/>
-                <button>Submit</button>
+                <button>ADD</button>
             </form>
         )
     }
 }
 
-export default InputTodo
+export default InputBucketList

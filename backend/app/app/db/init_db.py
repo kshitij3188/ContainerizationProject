@@ -19,21 +19,11 @@ def init_db(db: Session) -> None:
     items = crud.item.get_multi(db)
     if not items:
         initial_items = [
+            schemas.ItemCreate(title="Visit the Eiffel Tower in Paris", checked=False),
+            schemas.ItemCreate(title="Explore the Colosseum in Rome", checked=True),
+            schemas.ItemCreate(title="Hike the Swiss Alps", checked=False),
             schemas.ItemCreate(
-                title="This is my first task",
-                checked=False
-            ),
-            schemas.ItemCreate(
-                title="This is my already done task",
-                checked=True
-            ),
-            schemas.ItemCreate(
-                title="TODO: Add new task and check this as done",
-                checked=False
-            ),
-            schemas.ItemCreate(
-                title="Reload the page to see that tasks are stored in back-end database",
-                checked=False
+                title="Take a hot air balloon ride in Cappadocia", checked=False
             ),
         ]
         for i in initial_items:

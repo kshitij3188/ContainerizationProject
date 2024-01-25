@@ -1,4 +1,4 @@
-# Simple React Frontend for TodoList app
+# Simple React Frontend for BucketList app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

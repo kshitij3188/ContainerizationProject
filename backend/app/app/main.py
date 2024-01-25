@@ -6,8 +6,9 @@ from app.api.api_v1.api import api_router
 from app.core.config import settings
 
 app = FastAPI(
-    title=settings.PROJECT_NAME, openapi_url=f"{settings.API_V1_STR}/openapi.json",
-    docs_url=f"{settings.API_V1_STR}/docs"
+    title=settings.PROJECT_NAME,
+    openapi_url=f"{settings.API_V1_STR}/openapi.json",
+    docs_url=f"{settings.API_V1_STR}/docs",
 )
 
 # Set all CORS enabled origins
@@ -29,7 +30,7 @@ def main_page_welcome():
         </head>
         <body>
             <h1>Hello. This is main page of back-end</h1>
-            <p>You can find sources in the <a href="https://github.com/fif911/k8app">GitHub repo</a></p>
+            <p>You can find sources in the <a href="https://github.com/kshitij3188/ContainerizationProject">GitHub repo</a></p>
             <p><a href="./api/docs">See interactive documentation here</a></p>
             <p>API to play with is /items: 
 

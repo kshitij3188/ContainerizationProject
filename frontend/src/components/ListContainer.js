@@ -1,7 +1,7 @@
-import React from "react"
-import TodosList from "./TodosList";
+import BucketsList from "./BucketList";
 import Header from "./Header"
-import InputTodo from "./InputTodo"
+import InputBucketList from "./InputBucketList"
+import React from "react"
 
 let base_url = window._env_.REACT_APP_BACKEND_BASE_URI
 console.log("Original base_url URI: ")
@@ -15,7 +15,7 @@ if (!base_url.startsWith('http')){
 console.log("Backend API URI: ")
 console.log(base_url)
 
-class TodoContainer extends React.Component {
+class ListContainer extends React.Component {
 
     constructor(props) {
         super(props);
@@ -95,10 +95,10 @@ class TodoContainer extends React.Component {
     };
 
     render() {
-        return (<div id="div-todoslist">
+        return (<div id="div-BucketsList">
             <Header/>
-            <InputTodo addTodoProps={this.addTodoItem}/>
-            <TodosList todos={this.state.todos}
+            <InputBucketList addTodoProps={this.addTodoItem}/>
+            <BucketsList todos={this.state.todos}
                        handleChangeProps={this.handleChange}
                        deleteTodoProps={this.delTodo}/>
             <hr/>
@@ -106,4 +106,4 @@ class TodoContainer extends React.Component {
     }
 }
 
-export default TodoContainer
+export default ListContainer

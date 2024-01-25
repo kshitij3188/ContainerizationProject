@@ -1,6 +1,6 @@
 import React from "react"
 
-class TodoItem extends React.Component {
+class ListItem extends React.Component {
     render() {
         return <li>
             <input
@@ -18,13 +18,4 @@ class TodoItem extends React.Component {
     }
 }
 
-export default TodoItem
-
-
-// import React from "react"
-//
-// function TodoItem(props) {
-//   return <li>{props.todo.title}</li>
-// }
-//
-// export default TodoItem
+export default ListItem
