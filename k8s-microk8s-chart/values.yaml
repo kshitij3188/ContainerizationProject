@@ -22,7 +22,7 @@ backend:
 
 frontend:
   image:
-    name: dangg/k8app-frontend-image
+    name: caxolahop3/sc-frontend-v2
     tag: latest
   ports:
   - port: 3001

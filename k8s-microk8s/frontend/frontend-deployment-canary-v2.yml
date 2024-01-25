@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: k8app-frontend-v2
+  name: k8app-frontend-canary-v2
 spec:
   replicas: 1
   selector:
@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: k8app-frontend
-          image: dangg/k8app-frontend-image
+          image: caxolahop3/sc-frontend-v2
           imagePullPolicy: Always
           ports:
           - containerPort: 80
@@ -29,8 +29,8 @@ spec:
           env:
             - name: VERSION
               value: v2.0.0
-          resources:
-            limits:
-              cpu: 0.5
-            requests:
-              cpu: 0.25 # gives 1/2 of the limit
+          # resources:
+          #   limits:
+          #     cpu: 0.5
+          #   requests:
+          #     cpu: 0.25 # gives 1/2 of the limit
