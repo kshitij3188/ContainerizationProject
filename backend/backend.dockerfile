@@ -1,9 +1,12 @@
-FROM tiangolo/uvicorn-gunicorn-fastapi:python3.11
+FROM --platform=$BUILDPLATFORM flyingjoe/uvicorn-gunicorn-fastapi
 
 WORKDIR /app/
 
 # Install dependencies
 COPY ./app/requirements.txt /app/
+
+ARG TARGETPLATFORM
+
 # RUN bash -c "ls"
 RUN bash -c "pip install -r ./requirements.txt"
 

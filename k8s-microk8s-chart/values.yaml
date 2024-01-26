@@ -9,7 +9,7 @@ postgres:
 
 backend:
   image:
-    name: dangg/k8app-backend-image
+    name: caxolahop3/sc-backend-v2
     tag: latest
   ports:
   - port: 3000
