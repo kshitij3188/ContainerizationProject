@@ -1,4 +1,4 @@
-# Kubernetes frontend backend example
+# Kubernetes Application
 
 Simple containerized application with Kubernetes.
 This is a **BucketList application** which has **backend, frontend and database** deployed using Kubernetes.
@@ -7,12 +7,16 @@ This example can be deployed in microk8s.
 
 ### Project structure
 1) MicroK8s version located in `k8s-microk8s` folder
-3) Helm charts are located in  `k8s-microk8s-chart` and `k8s-chart` folders correspondingly
+3) Helm charts are located in  `k8s-microk8s-chart` folder
 ## Kubernetes
 
-### Architecture
+### Class Diagram
 
-![](docs/architecture.png)
+![UML-cd](https://github.com/kshitij3188/ContainerizationProject/blob/main/demo/Class_Diagram.png)
+
+### Sequence Diagram
+
+![UML-sd](https://github.com/kshitij3188/ContainerizationProject/blob/main/demo/Sequence_Diagram.png)
 
 This section provides information on the location and purpose of Kubernetes-related files.
 
@@ -156,6 +160,3 @@ it can be run with either `yarm` or `npm run`.
 
 Postgres is used as primary data store. Credentials for Docker-compose version can be found in `.env` file. Credentials
 for `Microk8s` version can be found in corresponding `ConfigMaps` and `Secrets`.
-
-
-
