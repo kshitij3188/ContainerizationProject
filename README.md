@@ -12,11 +12,11 @@ This example can be deployed in microk8s.
 
 ### Class Diagram
 
-![UML-cd](https://github.com/kshitij3188/ContainerizationProject/blob/main/demo/Class_Diagram.png)
+![UML-cd](https://github.com/kshitij3188/ContainerizationProject/blob/main/demo/Class%20Diagram.png)
 
 ### Sequence Diagram
 
-![UML-sd](https://github.com/kshitij3188/ContainerizationProject/blob/main/demo/Sequence_Diagram.png)
+![UML-sd](https://github.com/kshitij3188/ContainerizationProject/blob/main/demo/Sequence%20Diagram.png)
 
 This section provides information on the location and purpose of Kubernetes-related files.
 
