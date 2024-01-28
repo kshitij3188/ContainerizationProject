@@ -69,14 +69,13 @@ In order to ensure that the application works on local version it is necessary t
 127.0.0.1 backend.k8app.com
 ```
 
-1) Start microk8s: ```microk8s start```
-2) Enable dns: ```microk8s enable dns```
-3) Enable cert-manager: ```microk8s enable cert-manager```
-4) Enable ingress: ```microk8s enable ingress```
-5) Enable ha-cluster: ```microk8s enable ha-cluster```
-6) Enable observability: ```microk8s enable observability```
-7) Enable rbac: ```microk8s enable rbac```
-8) You then have two choices for deploying the application, either using K8s directly or using helm
+1) Enable dns: ```microk8s enable dns```
+2) Enable cert-manager: ```microk8s enable cert-manager```
+3) Enable ingress: ```microk8s enable ingress```
+4) Enable ha-cluster: ```microk8s enable ha-cluster```
+5) Enable observability: ```microk8s enable observability```
+6) Enable rbac: ```microk8s enable rbac```
+7) You then have two choices for deploying the application, either using K8s directly or using helm
     1) **Using K8s directly:** Navigate to ```k8s-microk8s``` folder and run:
         - ```microk8s kubectl apply -f .``` to install the application
         - ```microk8s kubectl delete -f .``` to uninstall the application
@@ -88,7 +87,7 @@ In order to ensure that the application works on local version it is necessary t
         - ```microk8s helm3 upgrade k8app k8s-microk8s-chart/``` to upgrade the application, when there is a change that
           can take effect, it will.
 
-9) Follow https://backend.k8app.com for backend and https://k8app.com for frontend
+8) Follow https://backend.k8app.com for backend and https://k8app.com for frontend
 
 *Note*: Due to the fact that we are using a wildcard certificate from a self-created certificate authority, it is
 necessary to navigate to the backend first and trust the certificate there before going to the frontend. If this is not
