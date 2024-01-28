@@ -99,7 +99,7 @@ done the frontend will appear empty until you trust the certificate from the bac
 - Make a change in your deployment file (Change the image tag or the limits)
 - Create configmaps.
 - Execute `kubectl apply -f [FILE_NAME]`
-- Validate rollout satus with `kubectl rollout status deployment/[DEPLOYMEN_TNAME]`
+- Validate rollout satus with `kubectl rollout status deployment/[DEPLOYMENT_NAME]`
 - Get rollout history with `kubectl rollout history deployment/[DEPLOYMENT_NAME]`
 - Go back to a specific revosion `kubectl rollout undo deployment/[DEPLOYMENT_NAME] --to-revision=1`
 
