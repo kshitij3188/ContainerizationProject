@@ -104,9 +104,9 @@ done the frontend will appear empty until you trust the certificate from the bac
 
 ### How to make a canary deployment
 
-- Execute `kubectl apply -f k8s-microk8s/frontend-deployment-canary-v1.yml`
-- Execute `kubectl apply -f k8s-microk8s/frontend-deployment-canary-v2.yml`
-- Scale down v1 `kubectl scale --replicas=9 k8app-frontend-v1`
+- Execute `microk8s kubectl apply -f k8s-microk8s/frontend-deployment-canary-v1.yml`
+- Execute `microk8s kubectl apply -f k8s-microk8s/frontend-deployment-canary-v2.yml`
+- Scale down v1 `microk8s kubectl scale --replicas=9 k8app-frontend-v1`
 - Delete deployment v1 `kubectl delete -f k8s-microk8s/frontend-deployment-canary-v1.yml`
 
 ## Docker:
