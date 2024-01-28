@@ -94,19 +94,6 @@ In order to ensure that the application works on local version it is necessary t
 necessary to navigate to the backend first and trust the certificate there before going to the frontend. If this is not
 done the frontend will appear empty until you trust the certificate from the backend.
 
-## Setup using Minikube
-
-1) Enable minikube to see local Docker images: ```eval $(minikube -p minikube docker-env)```
-2) Rebuild the docker images so now minikube sees them ```docker-compose build```
-3) To enable the NGINX Ingress controller, run the following command: ```minikube addons enable ingress```.
-4) Install metrics server for
-   minikube ```kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml```
-   so minikube can measure utilization of deployment (needed for HPA)
-5) Navigate to ```k8s``` folder and run ```kubectl delete -f .;kubectl apply -f .```
-6) Create a tunnel to load balancer with minikube: ```minikube service lb-backend``` or ```minikube tunnel lb-backend```
-7) Follow generate tunnel URI with to see backend container
-8) As there is no proper DNS resolution supported by minikube yet, it is not possible to proceed further
-
 ### How to make a rollout
 
 - Make a change in your deployment file (Change the image tag or the limits)
