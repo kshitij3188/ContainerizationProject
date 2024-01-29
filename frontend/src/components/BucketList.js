@@ -1,10 +1,17 @@
 import ListItem from "./ListItem";
 import React from "react"
+import styled from 'styled-components';
+
+const StyledList = styled.ul`
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+`;
 
 class BucketsList extends React.Component {
     render() {
         return (
-            <ul>
+            <StyledList>
                 {this.props.todos.map(todo => (
                     <ListItem
                         key={todo.id}
@@ -13,7 +20,7 @@ class BucketsList extends React.Component {
                         deleteTodoProps={this.props.deleteTodoProps}
                     />
                 ))}
-            </ul>
+            </StyledList>
         )
     }
 }

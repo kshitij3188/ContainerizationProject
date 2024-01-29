@@ -2,6 +2,15 @@ import BucketsList from "./BucketList";
 import Header from "./Header"
 import InputBucketList from "./InputBucketList"
 import React from "react"
+import styled from 'styled-components';
+
+
+const StyledContainer = styled.div`
+    max-width: 800px; // Or whatever max-width you prefer
+    margin: 0 auto; // This will center your container
+    padding: 0 20px; // This adds padding on the sides
+`;
+
 
 let base_url = window._env_.REACT_APP_BACKEND_BASE_URI
 console.log("Original base_url URI: ")
@@ -95,14 +104,16 @@ class ListContainer extends React.Component {
     };
 
     render() {
-        return (<div id="div-BucketsList">
-            <Header/>
-            <InputBucketList addTodoProps={this.addTodoItem}/>
-            <BucketsList todos={this.state.todos}
-                       handleChangeProps={this.handleChange}
-                       deleteTodoProps={this.delTodo}/>
-            <hr/>
-        </div>);
+        return (
+            <StyledContainer id="div-BucketsList">
+                <Header />
+                <InputBucketList addTodoProps={this.addTodoItem} />
+                <BucketsList todos={this.state.todos}
+                    handleChangeProps={this.handleChange}
+                    deleteTodoProps={this.delTodo} />
+                <hr />
+            </StyledContainer>
+        );
     }
 }
 
