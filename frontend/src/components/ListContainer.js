@@ -4,7 +4,6 @@ import InputBucketList from "./InputBucketList"
 import React from "react"
 import styled from 'styled-components';
 
-
 const StyledContainer = styled.div`
     max-width: 800px; // Or whatever max-width you prefer
     margin: 0 auto; // This will center your container
@@ -111,7 +110,6 @@ class ListContainer extends React.Component {
                 <BucketsList todos={this.state.todos}
                     handleChangeProps={this.handleChange}
                     deleteTodoProps={this.delTodo} />
-                <hr />
             </StyledContainer>
         );
     }
