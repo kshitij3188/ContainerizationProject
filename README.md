@@ -76,7 +76,7 @@ In order to ensure that the application works on local version it is necessary t
 5) Enable observability: ```microk8s enable observability```
 6) Enable rbac: ```microk8s enable rbac```
 7) Push Frontend Image: ```docker buildx build -f frontend.dockerfile --platform linux/amd64 -t caxolahop3/sc-frontend-v2 . --push```
-8) Push Backend Image: ```docker buildx build -f backebd.dockerfile --platform linux/aarm64 -t caxolahop3/sc-backend-v2 . --push```
+8) Push Backend Image: ```docker buildx build -f backend.dockerfile --platform linux/amd64 -t caxolahop3/sc-backend-v2 . --push```
 9) You then have two choices for deploying the application, either using K8s directly or using helm
     1) **Using K8s directly:** Navigate to ```k8s-microk8s``` folder and run:
         - ```microk8s kubectl apply -f .``` to install the application
@@ -106,8 +106,7 @@ done the frontend will appear empty until you trust the certificate from the bac
 
 ### How to make a canary deployment
 
-- Execute `microk8s kubectl apply -f k8s-microk8s/frontend-deployment-canary-v1.yml`
-- Execute `microk8s kubectl apply -f k8s-microk8s/frontend-deployment-canary-v2.yml`
+- Execute `microk8s kubectl apply -f k8s-microk8s/frontend-deployment-canary.yml`
 - Scale down v1 `microk8s kubectl scale --replicas=9 k8app-frontend-v1`
 - Delete deployment v1 `kubectl delete -f k8s-microk8s/frontend-deployment-canary-v1.yml`
 

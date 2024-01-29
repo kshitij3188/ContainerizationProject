@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: k8app-frontend-canary-v1
+  name: k8app-frontend-canary
 spec:
   replicas: 1
   selector:
@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: k8app-frontend
-          image: caxolahop3/sc-frontend-v2
+          image: caxolahop3/sc-frontend-v2:canary
           imagePullPolicy: Always
           ports:
           - containerPort: 80
