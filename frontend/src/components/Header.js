@@ -8,12 +8,16 @@ const StyledHeader = styled.header`
     padding: 20px 0;
 `;
 
+/* color: #eb4034; /* Red color for the title (Canary) */
+
 const Title = styled.h1`
     color: #1a5dab; /* Blue color for the title */
     font-family: 'Arial', sans-serif;
     font-size: 2.5rem;
     margin: 0;
 `;
+
+/* color: #eb4034; /* Red color for the title (Canary) */
 
 const Subtitle = styled.p`
     color: #1a5dab; /* Blue color for the subtitle */
