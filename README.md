@@ -18,13 +18,15 @@ This example can be deployed in microk8s.
 
 ![UML-sd](https://github.com/kshitij3188/ContainerizationProject/blob/main/demo/Sequence%20Diagram.png)
 
+### Deployment Diagram
+
+![UML-sd](https://github.com/kshitij3188/ContainerizationProject/blob/main/demo/Deployment%20Diagram.png)
+
 This section provides information on the location and purpose of Kubernetes-related files.
 
 ### `k8-microk8s/` folder
 
-The `k8-specs/` folder contains artifacts for creating Kubernetes objects using the command kubectl apply -f k8-specs.
-It is important to note that Minikube in macOS does not currently support DNS resolution, so it is strongly recommended
-to use Microk8s instead.
+The `k8-microk8s/` folder contains artifacts for creating Kubernetes objects using the command kubectl apply -f k8-specs.
 
 ### `k8app-charts/` folder
 
@@ -75,9 +77,7 @@ In order to ensure that the application works on local version it is necessary t
 4) Enable ha-cluster: ```microk8s enable ha-cluster```
 5) Enable observability: ```microk8s enable observability```
 6) Enable rbac: ```microk8s enable rbac```
-7) Push Frontend Image: ```docker buildx build -f frontend.dockerfile --platform linux/amd64 -t caxolahop3/sc-frontend-v2 . --push```
-8) Push Backend Image: ```docker buildx build -f backend.dockerfile --platform linux/amd64 -t caxolahop3/sc-backend-v2 . --push```
-9) You then have two choices for deploying the application, either using K8s directly or using helm
+7) You then have two choices for deploying the application, either using K8s directly or using helm
     1) **Using K8s directly:** Navigate to ```k8s-microk8s``` folder and run:
         - ```microk8s kubectl apply -f .``` to install the application
         - ```microk8s kubectl delete -f .``` to uninstall the application
@@ -89,11 +89,7 @@ In order to ensure that the application works on local version it is necessary t
         - ```microk8s helm3 upgrade k8app k8s-microk8s-chart/``` to upgrade the application, when there is a change that
           can take effect, it will.
 
-10) Follow https://backend.k8app.com for backend and https://k8app.com for frontend
-
-*Note*: Due to the fact that we are using a wildcard certificate from a self-created certificate authority, it is
-necessary to navigate to the backend first and trust the certificate there before going to the frontend. If this is not
-done the frontend will appear empty until you trust the certificate from the backend.
+8) Follow https://backend.k8app.com for backend and https://k8app.com for frontend
 
 ### How to make a rollout
 
