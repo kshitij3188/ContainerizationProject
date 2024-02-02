@@ -1,36 +1,25 @@
-```
-helm install k8s-app
-helm upgrade k8s-app
-helm uninstall k8s-app
-```
+# Kshitij
 
-# Get running k8 pods
+1) Build and push to registry
+```docker buildx build -f frontend.dockerfile --platform linux/amd64 -t caxolahop3/sc-frontend-v2 . --push```
 
-```
-kubectl get pods --field-selector=status.phase==Running
-```
+microk8s kubectl get all
 
-# Delete and recreate a pod
+2) Install using Helm
+```microk8s helm3 install k8app k8s-microk8s-chart/```
 
-```
-kubectl delete pod db-pod && kubectl create -f db_kube.yml
-```
+3) Show pod running
+microk8s kubectl get all
 
-# Save image to tar to be used in microk8s
 
-```
-docker save k8app-backend-image:1.1 > k8app-backend-image.tar
+6) Uninstall application
+microk8s helm3 uninstall k8app
 
-```
+# Yan
+1) Roles
+microk8s kubectl auth can-i get secrets --namespace default --as user_security
 
-# Restart deployments
+microk8s kubectl auth can-i get pods --namespace default --as user_security
 
-```
-kubectl rollout restart deployments.apps/db
-kubectl rollout restart deployments.apps/frontend
-kubectl rollout restart deployments.apps/backend
-
-microk8s enable ingress:default-ssl-certificate=default/frontend-tls-secret
-
-# restart everything
-kubectl delete -f .;kubectl apply -f .
+2) Network Policies 
+microk8s kubectl get networkpolicy

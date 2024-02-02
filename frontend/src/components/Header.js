@@ -8,22 +8,51 @@ const StyledHeader = styled.header`
     padding: 20px 0;
 `;
 
+/////////////////////ROLLOUT/////////////////
+// const Title = styled.h1`
+//     color: #ffc1cc; /* Pink color for the title */
+//     font-family: 'Arial', sans-serif;
+//     font-size: 2.5rem;
+//     margin: 0;
+// `;
+
+// const Subtitle = styled.p`
+//     color: #ffc1cc; /* Pink color for the title */
+//     font-family: 'Arial', sans-serif;
+//     margin: 5px 0;
+// `;
+/////////////////////ROLLOUT/////////////////
+
+/////////////////////CANARY/////////////////
+// const Title = styled.h1`
+//     color: #eb4034; /* Red color for the title (Canary)
+//     font-family: 'Arial', sans-serif;
+//     font-size: 2.5rem;
+//     margin: 0;
+// `;
+
+// const Subtitle = styled.p`
+//     color: #eb4034; /* Red color for the title (Canary)
+//     font-family: 'Arial', sans-serif;
+//     margin: 5px 0;
+// `;
+/////////////////////CANARY/////////////////
 
 
+/////////////////////ORIGINAL/////////////////
 const Title = styled.h1`
-    color: #eb4034; /* Red color for the title (Canary)
+    color: #1a5dab; /* Blue color for the title */
     font-family: 'Arial', sans-serif;
     font-size: 2.5rem;
     margin: 0;
 `;
 
-
-
 const Subtitle = styled.p`
-    color: #eb4034; /* Red color for the title (Canary)
+    color: #1a5dab; /* Blue color for the title */
     font-family: 'Arial', sans-serif;
     margin: 5px 0;
 `;
+/////////////////////ORIGINAL/////////////////
 
 const Header = () => {
     return (
