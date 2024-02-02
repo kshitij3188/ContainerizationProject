@@ -7,7 +7,7 @@ This example can be deployed in microk8s.
 
 ### Project structure
 1) MicroK8s version located in `k8s-microk8s` folder
-3) Helm charts are located in  `k8s-microk8s-chart` folder
+2) Helm charts are located in  `k8s-microk8s-chart` folder
 ## Kubernetes
 
 ### Class Diagram
@@ -105,7 +105,7 @@ In order to ensure that the application works on local version it is necessary t
 ### How to make a canary deployment
 
 - Execute `microk8s kubectl apply -f k8s-microk8s/frontend-deployment-canary.yml`
-- Scale down frontend deployment `microk8s kubectl scale  deployment frontend-deployment --replicas=3`
+- Scale down frontend deployment `microk8s kubectl scale deployment frontend-deployment --replicas=3`
 - Delete deployment old version `kubectl delete -f k8s-microk8s/frontend-deployment.yml`
 
 ## Docker:

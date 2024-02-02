@@ -8,7 +8,7 @@ const StyledHeader = styled.header`
     padding: 20px 0;
 `;
 
-/////////////////////ROLLOUT/////////////////
+/////////////////////CHANGE/////////////////
 // const Title = styled.h1`
 //     color: #ffc1cc; /* Pink color for the title */
 //     font-family: 'Arial', sans-serif;
@@ -21,7 +21,7 @@ const StyledHeader = styled.header`
 //     font-family: 'Arial', sans-serif;
 //     margin: 5px 0;
 // `;
-/////////////////////ROLLOUT/////////////////
+/////////////////////CHANGE/////////////////
 
 /////////////////////CANARY/////////////////
 // const Title = styled.h1`
