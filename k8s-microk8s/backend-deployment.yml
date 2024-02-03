@@ -28,8 +28,3 @@ spec:
                 name: postgres-config # populate db-specific values (needed to keep one source of truth)
             - secretRef:
                 name: postgres-secret # populate db-specific secrets (needed to keep one source of truth)
-          # resources:
-          #   limits:
-          #     cpu: 0.5
-          #   requests:
-          #     cpu: 0.25 # gives 1/2 of the limit

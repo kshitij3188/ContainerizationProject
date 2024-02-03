@@ -29,8 +29,3 @@ spec:
           env:
             - name: VERSION
               value: v2.0.0
-          # resources:
-          #   limits:
-          #     cpu: 0.5
-          #   requests:
-          #     cpu: 0.25 # gives 1/2 of the limit
