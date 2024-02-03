@@ -7,14 +7,14 @@ spec:
   selector:
     matchLabels:
       app: k8app-frontend
-      version: v1.0.0
+      version: v2.0.0
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
         app: k8app-frontend
-        version: v1.0.0
+        version: v2.0.0
         role: frontend
     spec:
       containers:
@@ -28,7 +28,7 @@ spec:
                 name: k8app-frontend-config
           env:
             - name: VERSION
-              value: v1.0.0
+              value: v2.0.0
           # resources:
           #   limits:
           #     cpu: 0.5

@@ -104,8 +104,8 @@ In order to ensure that the application works on local version it is necessary t
 
 ### How to make a canary deployment
 
-- Execute `microk8s kubectl apply -f k8s-microk8s/frontend-deployment-canary.yml`
-- Scale down frontend deployment `microk8s kubectl scale deployment frontend-deployment --replicas=3`
+- Execute `microk8s kubectl apply -f frontend-deployment-canary.yml`
+<!-- - Scale down frontend deployment `microk8s kubectl scale deployment frontend-deployment --replicas=3` -->
 - Delete deployment old version `kubectl delete -f k8s-microk8s/frontend-deployment.yml`
 
 ## Docker:
